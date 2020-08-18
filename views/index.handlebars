@@ -1,0 +1,27 @@
+<main class="wide">
+    <div class="container">
+
+        <section class="eat">
+            <h2>Ready to Eat</h2>
+            <div class="each-line">{{#each burgers}} {{#unless this.devoured}}
+                <p>{{burger_name}}</p>
+                <button class="change-devoured" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Eat it!</button>
+                {{/unless}} {{/each}}</div>
+        </section>
+
+
+        <section class="eaten">
+            <h2>Eaten</h2>
+            <div class="each-line">{{#each burgers}} {{#if devoured}}
+                <p>{{burger_name}}</p>
+                <button class="delete-burger" data-id="{{this.id}}">Throw Away!</button>
+                {{/if}} {{/each}}</div>
+        </section>
+
+
+        <form class="create-form">
+            <input type="text" id="cb" name="burger_name" placeholder="add a burger">
+            <button type="submit">create</button>
+        </form>
+    </div>
+</main>
